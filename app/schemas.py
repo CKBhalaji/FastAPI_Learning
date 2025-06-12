@@ -1,7 +1,21 @@
+from calendar import c
 from datetime import datetime
-from venv import create
-from pydantic import BaseModel, EmailStr
+from typing import Optional
+from pydantic import BaseModel, EmailStr, conint
 
+
+class UserCreate(BaseModel):
+    email: EmailStr
+    password: str
+    
+class UserOut(BaseModel):
+    id: int
+    email: EmailStr
+    created_at: datetime
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
     
 class postBase(BaseModel):
     title: str
@@ -14,12 +28,16 @@ class postCreate(postBase):
 class Post(postBase):
     id: int 
     created_at: datetime
-
-class UserCreate(BaseModel):
-    email: EmailStr
-    password: str
+    owner_id: int
+    owner: UserOut
+ 
+class Token(BaseModel):
+    access_token: str
+    token_type: str
     
-class UserOut(BaseModel):
-    id: int
-    email: EmailStr
-    created_at: datetime
+class TokenData(BaseModel):
+    id: Optional[str] = None
+    
+class Vote(BaseModel):
+    post_id: int
+    dir: conint(le=1)

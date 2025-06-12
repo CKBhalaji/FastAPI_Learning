@@ -33,3 +33,5 @@ __pycache__/
 # Ignore editor swap files
 *~
 *.swp
+
+.env
