@@ -16,3 +16,20 @@ uvicorn FastAPI_The_Complete_Course_2025.Project_2_FastAPI_Books.books:app --rel
 
 
 https://education.github.com/pack
+
+
+# def test_todo(test_db):
+    # Create a user
+    # user = User(
+    #     email="testuser@example.com",
+    #     username="testuser",
+    #     first_name="Test",
+    #     last_name="User",
+    #     hashed_password="password",
+    #     role="admin",
+    #     phone_number="9789559266",
+    # )
+    # db = TestingSessionLocal()
+    # db.add(user)
+    # db.commit()
+    # db.refresh(user) 
