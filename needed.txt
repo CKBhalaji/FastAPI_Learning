@@ -14,6 +14,8 @@ taskkill /F /PID <NEW_PID>
 
 uvicorn FastAPI_The_Complete_Course_2025.Project_2_FastAPI_Books.books:app --reload
 
+uvicorn FastAPI_The_Complete_Course_2025.TodoApp.main:app --reload
+
 
 https://education.github.com/pack
 

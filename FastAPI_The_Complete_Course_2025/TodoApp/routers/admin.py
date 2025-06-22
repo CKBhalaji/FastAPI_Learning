@@ -14,7 +14,7 @@ router = APIRouter(
 db_dependency = Annotated[Session, Depends(get_db)]
 user_dependency = Annotated[dict, Depends(get_current_user)]
 
-@router.get("/", status_code=status.HTTP_200_OK)
+@router.get("/todo", status_code=status.HTTP_200_OK)
 def red_all(user: user_dependency, db: db_dependency):
     if user is None or user.get("user_role") != "admin":
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Authentication Failed.")
